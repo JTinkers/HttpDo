@@ -89,7 +89,7 @@ To install the package, simply find it in your Nuget Package Browser then click 
 To start the service, simply put the code below somewhere in the program where you find it fit.	
 
 ```csharp
-var handler = new HttpHandler("http://localhost:3333", "HttpDo");
+var handler = new HttpHandler("http://*:3333", "HttpDo"); // * means catch-all, will bind to all interfaces
 ```
 
 The first parameter is `rootUrl` and it defines under which URL the connection will be available.
