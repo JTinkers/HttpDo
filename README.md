@@ -2,7 +2,7 @@
 
 **HttpDo** is a robust yet easy to install and use nuget package.
 
-It provides you with means neccessary to create a remotely accessible app - be it an interface for your TwitterBot or a control panel for IOP of your fishtank.
+It provides you with means neccessary to create a remotely accessible app - be it an web interface for your TwitterBot or a control panel for IOP of your fishtank.
 
 
 
