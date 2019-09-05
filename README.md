@@ -1,6 +1,6 @@
 # HttpDo
 
-**HttpDo** is a robust yet easy to install and use nuget package.
+**HttpDo** is a robust yet easy to use nuget package.
 
 It provides you with tools neccessary to create a web interface directly connected to your app.
 
