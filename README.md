@@ -14,6 +14,8 @@ Below you'll find a list of topics that'll put you up to speed with the plugin.
 
 **Table of Contents:**
 
+[TOC]
+
 
 
 ## Features
