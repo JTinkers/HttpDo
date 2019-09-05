@@ -107,7 +107,7 @@ If you've hooked it properly, navigating to `http://localhost:3333/print` should
 
 .. and there it is:
 
-![1567708441334](README-Images\1567708441334.png)
+![1567708441334](README-Images/1567708441334.png)
 
 
 
@@ -145,7 +145,7 @@ public static string GetDate() => DateTime.Now.ToString();
 
 Surely enough, the result we get is:
 
-![1567708969851](README-Images\1567708969851.png)
+![1567708969851](README-Images/1567708969851.png)
 
 
 
@@ -167,7 +167,7 @@ In order for method to be executed, the default C# rules still apply:
 
 - If param isn't optional and isn't being set - you'll get one of these red headaches:
 
-  ![1567709354533](README-Images\1567709354533.png)
+  ![1567709354533](README-Images/1567709354533.png)
 
 
 
@@ -182,7 +182,7 @@ public static int Add(int a, int b) => a + b;
 
 .. and here's the result:
 
-![1567709980713](README-Images\1567709980713.png)
+![1567709980713](README-Images/1567709980713.png)
 
 <hr>
 
@@ -211,7 +211,7 @@ As you can see, the declaration is almost identical.
 
 .. yet again, here's the result of `a=54` + `b=6`:
 
-![1567710200033](README-Images\1567710200033.png)
+![1567710200033](README-Images/1567710200033.png)
 
 
 
@@ -299,7 +299,7 @@ By default `HasFileAccess()` checks if session the same session variable is set,
 
 If you try accessing the page without the session variable being set, you'll get this message:
 
-![1567711004607](README-Images\1567711004607.png)
+![1567711004607](README-Images/1567711004607.png)
 
 
 
@@ -314,7 +314,7 @@ public static void Authorize() => Handler.GetSession()["is_authorized"] = true;
 
 .. the result would be far different:
 
-![1567711110455](README-Images\1567711110455.png)
+![1567711110455](README-Images/1567711110455.png)
 
 **Hint: ** You can create a page for authorization that requires a secret key, login, password etc.
 
@@ -381,7 +381,7 @@ Here's an example how to use it:
 
 .. and here's the result:
 
-![1567711608511](README-Images\1567711608511.png)
+![1567711608511](README-Images/1567711608511.png)
 
 
 
