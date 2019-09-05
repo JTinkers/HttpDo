@@ -93,7 +93,7 @@ The second parameter is `rootPath` which defines path to folder containing `inde
 
 
 
-**Hint: **It's highly advices to declare handler as a public property accessible from outside the scope.
+**Hint:** It's highly advised to declare handler as a public property accessible from outside the scope.
 
 <hr>
 
@@ -162,7 +162,7 @@ Surely enough, the result we get is:
 
 
 
-**Note: ** HttpDo is api-ready. All you need is some asynchronous javascript and you can make the clock refresh in real time.
+**Note:** HttpDo is api-ready. All you need is some asynchronous javascript and you can make the clock refresh in real time.
 
 
 
@@ -329,7 +329,7 @@ public static void Authorize() => Handler.GetSession()["is_authorized"] = true;
 
 ![1567711110455](README-Images/1567711110455.png)
 
-**Hint: ** You can create a page for authorization that requires a secret key, login, password etc.
+**Hint:** You can create a page for authorization that requires a secret key, login, password etc.
 
 
 
