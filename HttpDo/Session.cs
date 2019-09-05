@@ -26,10 +26,10 @@ namespace HttpDo
         /// </summary>
         /// <param name="key">Key as an index.</param>
         /// <returns>Value under specific key.</returns>
-        public new dynamic this[string key]
+        public dynamic this[string key]
         {
             get => this.GetValueOrDefault(key);
-            set => this[key] = value;
+            set => (this as Dictionary<string, dynamic>)[key] = value;
         }
     }
 }

@@ -6,11 +6,11 @@ namespace ExampleApp
 {
     class Program
     {
-        public static HttpService Handler { get; private set; }
+        public static HttpHandler Handler { get; private set; }
 
         static void Main(string[] args)
         {
-            Handler = new HttpService("http://localhost:3333", "HttpDo");
+            Handler = new HttpHandler("http://localhost:3333", "HttpDo");
 
             Console.WriteLine("Click anything to close the program.");
 
@@ -26,6 +26,9 @@ namespace ExampleApp
             "C has a default value of 21, if you don't set it - it'll remain 21\n" +
             "\n" +
             $"A: {a} B: {b} C: {c}");
+
+        [HttpGet("setdate")]
+        public static void SetDate() => Handler.GetSession()["date"] = DateTime.Now;
 
         [HttpGet("unauthorized", true)]
         public static string SecureMethod() => "You are authorized, so you can view this.";

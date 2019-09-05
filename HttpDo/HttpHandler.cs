@@ -10,7 +10,7 @@ using System.Web;
 
 namespace HttpDo
 {
-    public abstract class HttpHandler
+    public class HttpHandler
     {
         private HttpListener Listener { get; set; } = new HttpListener();
 
@@ -149,9 +149,9 @@ namespace HttpDo
 
                 foreach (var p in method.GetParameters())
                 {
-                    if (p.ParameterType == typeof(Session))
+                    if (p.IsOptional && !Request.QueryString.AllKeys.Contains(p.Name))
                     {
-                        parameters[p.Name] = session;
+                        parameters[p.Name] = p.DefaultValue;
 
                         continue;
                     }
@@ -165,15 +165,7 @@ namespace HttpDo
 
                     var pType = Nullable.GetUnderlyingType(p.ParameterType) ?? p.ParameterType;
 
-                    if (p.IsOptional)
-                    {
-                        parameters[p.Name] = p.DefaultValue;
-
-                        continue;
-                    }
-
-                    parameters[p.Name] = Request.QueryString[p.Name] != null
-                        ? Convert.ChangeType(Request.QueryString[p.Name], pType) : null;
+                    parameters[p.Name] = Request.QueryString[p.Name] != null ? Convert.ChangeType(Request.QueryString[p.Name], pType) : null;
                 }
 
                 var returnValue = method.Invoke(null, parameters.Values.Cast<object>().ToArray());
@@ -288,8 +280,12 @@ namespace HttpDo
                     continue;
                 }
 
-                if (p.IsOptional)
+                if (p.IsOptional && !bodyValues.Keys.Contains(p.Name))
+                {
                     parameters[p.Name] = p.DefaultValue;
+
+                    continue;
+                }
 
                 if (!p.IsOptional && Nullable.GetUnderlyingType(p.ParameterType) == null && !bodyValues.Keys.Contains(p.Name))
                 {
