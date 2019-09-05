@@ -80,12 +80,6 @@ To install the package, simply find it in your Nuget Package Browser then click 
 
 [.NET Core Version](https://www.nuget.org/packages/HttpDo.Core/)
 
-
-
-.. or paste the lines below to your Package Manager Console.
-
-`code`
-
 <hr>
 
 **Step 2 - Start Service**
