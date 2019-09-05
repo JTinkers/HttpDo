@@ -78,7 +78,7 @@ To install the package, simply find it in your Nuget Package Browser then click 
 
 .. or click the link below.
 
-[.NET Core Version](https://www.nuget.org/packages/HttpDo.Core/)
+[Click](https://www.nuget.org/packages/HttpDo/)
 
 <hr>
 
