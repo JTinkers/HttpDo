@@ -6,6 +6,9 @@ namespace ExampleApp
 {
     class Program
     {
+        [HttpPost("add")]
+        public static int Add(int a, int b) => a + b;
+
         public static HttpHandler Handler { get; private set; }
 
         static void Main(string[] args)
@@ -30,8 +33,11 @@ namespace ExampleApp
         [HttpGet("setdate")]
         public static void SetDate() => Handler.GetSession()["date"] = DateTime.Now;
 
+        [HttpGet("getdate")]
+        public static string GetDate() => DateTime.Now.ToString();
+
         [HttpGet("unauthorized", true)]
-        public static string SecureMethod() => "You are authorized, so you can view this.";
+        public static string SecureMethod() => "You are here.";
 
         [HttpGet("authorize")]
         public static string Authorize()
@@ -50,10 +56,7 @@ namespace ExampleApp
         }
 
         [HttpGet("redirect")]
-        public static Response Redirector()
-        {
-            return new Response("");
-        }
+        public static Response Redirector() => new Response("");
 
         [HttpGet("redirectwsession")]
         public static Response RedirectorWithSession()
