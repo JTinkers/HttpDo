@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>HttpDo - Test Page</title>
+	</head>
+    <body>
+        <center>
+            <h1>HttpDo</h1>
+            <h2>Testing Page</h2>
+        </center>
+        <span>Example session value: @{{ Session["example_value"] ?? "null" }}</span>
+        <ul>
+            <li><a href="/print">Print message into console.</a></li>
+            <li><a href="/margs">Print console message with arguments. (Error)</a></li>
+            <li><a href="/margs?b=5">Print console message with arguments. (Success)</a></li>
+            <li><a href="/unauthorized">Page you aren't authorized to view.</a></li>
+            <li><a href="/authorize">Page that'll give you authorization to view unauthorized pages.</a></li>
+            <li><a href="/unauthorize">Page that'll remove your authorization.</a></li>
+            <li><a href="/redirect">Page that'll redirect you back to index.</a></li>
+            <li><a href="/redirectwsession">Page that'll redirect you back to index - but with session data.</a></li>
+        </ul>
+        <hr />
+        <h4>Form that'll execute method with it's parameters.</h4>
+        <form action="/formdefinedparams" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="text" />
+            <input type="number" name="integer" />
+            <input type="submit">
+        </form>
+        <hr />
+        <h4>Form that'll execute method with undefined parameters and bundle values in FormData object.</h4>
+        <form action="/form" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="text" />
+            <input type="date" name="date" />
+            <input type="number" name="integer" />
+            <input type="submit">
+        </form>
+        <hr />
+        <h4>Form that'll execute method with undefined parameters and bundle values in FormData object, but also allows you to pass integer.</h4>
+        <form action="/formmixparams" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="text" />
+            <input type="date" name="date" />
+            <input type="number" name="integer" />
+            <input type="submit">
+        </form>
+        <hr />
+    </body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
+	body
+	{
+		margin: 16px;
+		padding: 0;
+		line-height: 1;
+		font-family: 'Manjari', sans-serif;
+		font-size: 16px;
+	}
+
+    ul > li
+    {
+        margin-bottom: 8px;
+    }
+</style>

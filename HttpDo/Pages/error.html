@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>HttpDo - Error Page</title>
+	</head>
+	<body>
+		<div id="error-screen">
+			<p>Something went terribly wrong.</p>
+
+			<p>@{{ Session["ErrorMessage"] }}</p>
+		</div>
+	</body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700|Raleway:200,300,400,700|Fira+Mono:400|Open+Sans:300,400,700');
+	@import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
+	body
+	{
+		margin: 0;
+		padding: 0;
+		background: rgb(255, 45, 45);
+	}
+
+	#error-screen
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 32px;
+		width: 100vw;
+		height: 100vh;
+		color: white;
+	}
+</style>

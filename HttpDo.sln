@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpDo", "HttpDo\HttpDo.csproj", "{463A0E52-685A-4977-A7DB-80D7F2C37779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApp", "ExampleApp\ExampleApp.csproj", "{AEA775F4-EE12-495F-85B2-5F357BC75E6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{463A0E52-685A-4977-A7DB-80D7F2C37779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463A0E52-685A-4977-A7DB-80D7F2C37779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463A0E52-685A-4977-A7DB-80D7F2C37779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463A0E52-685A-4977-A7DB-80D7F2C37779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA775F4-EE12-495F-85B2-5F357BC75E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA775F4-EE12-495F-85B2-5F357BC75E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA775F4-EE12-495F-85B2-5F357BC75E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA775F4-EE12-495F-85B2-5F357BC75E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAE95BFB-8EEF-4271-AB25-BA19958262FF}
+	EndGlobalSection
+EndGlobal

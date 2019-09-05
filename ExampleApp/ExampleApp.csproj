@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HttpDo\HttpDo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="HttpDo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HttpDo\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
