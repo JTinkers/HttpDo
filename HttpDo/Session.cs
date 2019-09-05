@@ -28,7 +28,12 @@ namespace HttpDo
         /// <returns>Value under specific key.</returns>
         public dynamic this[string key]
         {
-            get => this.GetValueOrDefault(key);
+            get
+            {
+                this.TryGetValue(key, out dynamic r);
+
+                return r;
+            }
             set => (this as Dictionary<string, dynamic>)[key] = value;
         }
     }

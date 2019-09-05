@@ -85,7 +85,7 @@ namespace HttpDo
 
                     var path = Request.Url.AbsolutePath;
 
-                    if (path.StartsWith('/'))
+                    if (path.StartsWith("/"))
                         path = path.TrimStart('/');
 
                     Route = GetRoute(path);
