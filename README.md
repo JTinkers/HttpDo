@@ -80,6 +80,10 @@ To install the package, simply find it in your Nuget Package Browser then click 
 
 [Click](https://www.nuget.org/packages/HttpDo/)
 
+.. or enter this into your package manager console:
+
+`Install-Package HttpDo`
+
 <hr>
 
 **Step 2 - Start Service**
