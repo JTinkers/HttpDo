@@ -10,13 +10,24 @@ Despite being lightweight, it also comes with sessions, templating engine, error
 
 
 
-Below you'll find a list of topics that'll put you up to speed with the plugin.
+## Table of Contents
 
-**Table of Contents:**
+- [Features](#Features)
+- [Getting Started](#Getting_Started)
+- [Routing](#Routing)
+- [Return Values](#Return_Values)
+- [Call with Params](#Call_with_Params)
+- [FormData Container](#FormData_Container)
+- [Sessions](#Sessions)
+- [Redirecting](#Redirecting)
+- [Authorization](#Authorization)
+- [Custom Authorization](#Custom_Authorization)
+- [Templating Engine](#Templating_Engine)
+- [To-Do's](#To-Do's)
+
+
 
 [TOC]
-
-
 
 ## Features
 
