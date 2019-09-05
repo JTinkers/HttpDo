@@ -13,21 +13,30 @@ Despite being lightweight, it also comes with sessions, templating engine, error
 ## Table of Contents
 
 - [Features](#Features)
+
 - [Getting Started](#Getting-Started)
+
 - [Routing](#Routing)
+
 - [Return Values](#Return-Values)
+
 - [Call with Params](#Call-with-Params)
+
 - [FormData Container](#FormData-Container)
+
 - [Sessions](#Sessions)
+
 - [Redirecting](#Redirecting)
+
 - [Authorization](#Authorization)
+
 - [Custom Authorization](#Custom-Authorization)
+
 - [Templating Engine](#Templating-Engine)
+
 - [To-Do's](#To-Dos)
 
-
-
-[TOC]
+  
 
 ## Features
 
