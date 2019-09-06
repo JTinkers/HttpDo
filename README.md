@@ -2,9 +2,9 @@
 
 **HttpDo** is a robust yet easy to use nuget package.
 
-It provides you with tools neccessary to create a web interface directly connected to your app.
+It provides you with tools neccessary to create web interfaces directly connected to your apps.
 
-Despite being lightweight, it also comes with sessions, templating engine, error handling, routing, easy authorization and more!
+Despite being lightweight - it comes with sessions, templating engine, error handling, routing, easy authorization and more!
 
 
 
@@ -78,6 +78,7 @@ To install the package, simply find it in your Nuget Package Browser then click 
 
 [Click](https://www.nuget.org/packages/HttpDo/)
 
+
 .. or enter this into your package manager console:
 
 `Install-Package HttpDo`
@@ -86,7 +87,7 @@ To install the package, simply find it in your Nuget Package Browser then click 
 
 **Step 2 - Start Service**
 
-To start the service, simply put the code below somewhere in the program where you find it fit.	
+To start the service, simply put the code below somewhere in the program.	
 
 ```csharp
 var handler = new HttpHandler("http://*:3333", "HttpDo"); // * means catch-all, will bind to all interfaces
@@ -98,19 +99,19 @@ The second parameter is `rootPath` which defines path to folder containing `inde
 
 
 
-**Hint:** It's highly advised to declare handler as a public property accessible from outside the scope.
+**Hint:** It's highly advised to declare handler as a public property accessible from outside of the scope.
 
 <hr>
 
 **Step 3 - Hook Methods**
 
-To hook a method to a route, simply add one of two attributes above it - `[HttpGet]` or `[HttpPost]`.
+To hook method to a route, simply add one of attributes - `[HttpGet]` or `[HttpPost]`.
 
-The first parameter of the attribute is essential, because it defines under which URL the method will be available.
+The first parameter of the attribute is essential - it defines under which URL the method will be available.
 
 
 
-Here's an example of hooking:
+Here's an example of hooking method to a route:
 
 ```csharp
 [HttpGet("print")]
@@ -119,7 +120,7 @@ public static void Print() => Console.WriteLine("This is an example message.");
 
 
 
-If you've hooked it properly, navigating to `http://localhost:3333/print` should pop a message in the console.
+If you've hooked it properly, navigating to `http://localhost:3333/print` should pop a message into the console.
 
 
 
@@ -144,7 +145,7 @@ Follow them and you won't have any issues.
 
 ## Return Values
 
-You can return values from both **GET** and **POST** requests, as long as the return value is of a type that's convertible to string.
+You can return values from both **GET** and **POST** requests, as long as the return value is convertible to string.
 
 String is a prefered type of the HTTP protocol due to xml, json and other string-based formats.
 
@@ -167,13 +168,13 @@ Surely enough, the result we get is:
 
 
 
-**Note:** HttpDo is api-ready. All you need is some asynchronous javascript and you can make the clock refresh in real time.
+**Note:** HttpDo is api-ready. All you need is asynchronous javascript and you can make the clock refresh in real time.
 
 
 
 ## Call with Params
 
-The plugin comes with a system for processing raw request data into method parameters if need be.
+The plugin comes with a system for processing and passing request data to methods as parameters.
 
 
 
@@ -189,7 +190,7 @@ In order for method to be executed, the default C# rules still apply:
 
 
 
-Now, here's an example on how to accomplish such a thing with a GET request:
+Now, here's an example on how to call a method hooked to a GET route:
 
 ```csharp
 [HttpGet("add")]
@@ -211,23 +212,19 @@ Here's an example on how to accomplish the same thing with a POST request:
 public static int Add(int a, int b) => a + b;
 ```
 
-As you can see, the declaration is almost identical.
-
-
-
-.. but what we also need, is a HTML form:
+.. but what we also need an HTML form:
 
 ```html
 <form action="/add" method="post">
-	<input type="number" name="a"/>
-	<input type="number" name="b"/>
+	<input type="number" name="a" value="54"/>
+	<input type="number" name="b" value="6"/>
 	<input type="submit"/>
 </form>
 ```
 
 
 
-.. yet again, here's the result of `a=54` + `b=6`:
+.. yet again, here's the result:
 
 ![1567710200033](README-Images/1567710200033.png)
 
@@ -235,19 +232,18 @@ As you can see, the declaration is almost identical.
 
 ## FormData Container
 
-Performing POST requests is easy, but sometimes you want to handle multiple forms of different inputs using a single route.
+Performing POST requests is easy, but sometimes you want to handle multiple forms that aren't neccessary identical in terms of inputs.
+.. and if they aren't identical, the inputs won't match method parameters either.
+If that's the case - what you want to use is `FormData` container, which basically is a `Dictionary<string, dynamic>`, where `key` is the input's name and `value` is .. well, input's value.
 
-All you need to do so is use `FormData` container.
 
-
-
-Here's how:
+.. and here's an example:
 
 ```csharp
 [HttpPost("contact")]
 public static void Contact(FormData form) => Console.Write(form["message"]);
 
-// message refers to input of name 'message'
+// message refers to input of such name - 'message'
 ```
 
 
@@ -275,8 +271,6 @@ Handler.GetSession()["key"]; // retrieve
 
 ## Redirecting
 
-Redirecting is a fairly simple thing in HttpDo.
-
 If your method is meant to redirect back after it's done working it's magic, simply declare it's return type as `Response` and within the constructor define the route you want it to navigate to.
 
 
@@ -296,7 +290,7 @@ Some pages and routes shouldn't be publicly available to unauthorized users.
 
 If you haven't noticed yet, the `HttpGet` and `HttpPost` have an extra parameter called `secure`.
 
-The said parameter indicates whether or not requests will execute `HasAccess()` and `HasFileAccess()` before letting the request to go through.
+The said parameter indicates whether or not requests will execute `HasAccess()` and `HasFileAccess()` before letting the request go through.
 
 
 
@@ -311,7 +305,7 @@ public static string SecureMethod() => "You are here.";
 
 By default `HasAccess()` checks if session variable called `is_authorized` was set.
 
-By default `HasFileAccess()` checks if session the same session variable is set, but also checks if the file has `.html` extension.
+By default `HasFileAccess()` checks if the same session variable is set, but also checks if the file has `.html` extension.
 
 
 
@@ -334,8 +328,8 @@ public static void Authorize() => Handler.GetSession()["is_authorized"] = true;
 
 ![1567711110455](README-Images/1567711110455.png)
 
-**Hint:** You can create a page for authorization that requires a secret key, login, password etc.
 
+**Hint:** You can create a page for authorization with 2 fields: login and password, then make it go to a POST route that executes method which verifies whether login and password were correct - if so, set the session variable "is_authorized" to true - and that's one way to secure your app.
 
 
 ## Custom Authorization
@@ -364,15 +358,13 @@ public class HttpService : HttpHandler
 }
 ```
 
-Easy enough? I should hope so :)
+Easy enough? I should hope so.
 
 
 
 ## Templating Engine
 
-Finally, my favourite feature.
-
-Templating Engine parses your html files before they go through, replacing `@{{ code }}` with the result of the said code.
+Templating Engine parses your html files before they go through, replacing `@{{ code }}` with the result of `code`.
 
 
 
@@ -404,10 +396,3 @@ Here's an example how to use it:
 
 
 **Remember:** Session in this case is available under `Session` not `Handler.GetSession()`.
-
-
-
-## To-Do's
-
-- Allow returning views (html files) in GET requests.
-
