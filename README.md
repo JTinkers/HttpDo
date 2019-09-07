@@ -396,3 +396,7 @@ Here's an example how to use it:
 
 
 **Remember:** Session in this case is available under `Session` not `Handler.GetSession()`.
+
+## To-Do's
+
+- Implement more unique way of identifying sessions rather than IP address.
