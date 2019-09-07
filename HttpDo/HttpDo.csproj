@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>JTinkers</Authors>
+    <Description>Lightweight package providing you with means to host a website that can execute methods or display data of a connected app. All you need is one line.</Description>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

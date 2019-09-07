@@ -33,10 +33,21 @@ namespace HttpDo
         /// </summary>
         protected HttpRoute Route { get; set; }
 
+        /// <summary>
+        /// URL under which the service will be available.
+        /// </summary>
         public string RootUrl { get; private set; }
 
+        /// <summary>
+        /// Path to directory containing index.html and any other page that can be navigated to.
+        /// </summary>
         public string RootPath { get; private set; }
 
+        /// <summary>
+        /// Create and initialize a new instance of <see cref="HttpHandler"/>.
+        /// </summary>
+        /// <param name="rootUrl">URL under which the service will be available.</param>
+        /// <param name="rootPath">Path to directory containing index.html and any other page that can be navigated to</param>
         public HttpHandler(string rootUrl, string rootPath)
         {
             RootUrl = rootUrl;
@@ -110,6 +121,10 @@ namespace HttpDo
             });
         }
 
+        /// <summary>
+        /// Return session for current request.
+        /// </summary>
+        /// <returns>An instance of <see cref="Session"/>.</returns>
         public Session GetSession()
             => Sessions.SingleOrDefault(x => x.Address == Request.RemoteEndPoint.Address.ToString());
 
