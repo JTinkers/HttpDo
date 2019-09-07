@@ -1,10 +1,15 @@
 # HttpDo
 
-**HttpDo** is a lightweight package that allows you to create web interfaces (plain websites with buttons and inputs) that can execute methods and display data of the connected app.
+**HttpDo** is a lightweight package that allows you to host a web interface (website with buttons and inputs) that can execute methods and display data of a connected app.
 
 Despite being lightweight - it comes with sessions, templating engine, error handling, routing, easy authorization and more!
 
+All you need to do to have a fully functional, remotely accessible control panel for your app is:
 
+- create a small website with buttons and inputs for all methods you want to have control of.
+- add one line to start service.
+- add one attribute per method you want to share with the control panel.
+- .. and you are good to go!
 
 ## Table of Contents
 
