@@ -1,8 +1,6 @@
 # HttpDo
 
-**HttpDo** is a lightweight package that allows you to create web interfaces (plain websites with buttons and inputs) that can execute methods and display data of the connected apps.
-
-It provides you with tools neccessary to create web interfaces directly connected to your apps.
+**HttpDo** is a lightweight package that allows you to create web interfaces (plain websites with buttons and inputs) that can execute methods and display data of the connected app.
 
 Despite being lightweight - it comes with sessions, templating engine, error handling, routing, easy authorization and more!
 
