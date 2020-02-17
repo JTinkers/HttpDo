@@ -380,7 +380,6 @@ Here's an example how to use it:
 ```html
 <html>
 	<head>
-		<meta>
 		<title>Sample Page</title>
 	</head>
 	<body>
